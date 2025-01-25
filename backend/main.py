@@ -1,6 +1,7 @@
 import os
 import uuid
 import logging
+import config
 from fastapi import FastAPI, File, UploadFile, Form, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from dotenv import load_dotenv
