@@ -151,4 +151,26 @@ html, body, #root {
   margin: 0;
   padding: 0;
 }
+
+/* Responsive Design Adjustments */
+@media (max-width: 768px) {
+    .container {
+        padding: 10px; /* Reduce padding for smaller screens */
+    }
+
+    .send-button {
+        width: 40px; /* Smaller button size */
+        height: 40px; /* Smaller button size */
+    }
+
+    .message-input {
+        font-size: 14px; /* Adjust font size for input */
+        padding: 8px; /* Adjust padding for input */
+    }
+
+    .message-list {
+        max-height: 300px; /* Limit height for message list */
+        overflow-y: auto; /* Enable scrolling */
+    }
+}
   
