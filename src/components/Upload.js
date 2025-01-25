@@ -4,6 +4,7 @@ import './Upload.css'; // Import CSS for styling
 
 const Upload = ({ onFileUpload }) => {
     const [file, setFile] = useState(null);
+    const [uploading, setUploading] = useState(false);  // Track loading state
 
     const handleFileChange = (event) => {
         setFile(event.target.files[0]);
@@ -19,24 +20,30 @@ const Upload = ({ onFileUpload }) => {
         formData.append("file", file);
 
         try {
+            setUploading(true);  // Start loading state
+
             // Call the upload endpoint
             const response = await axios.post("https://pdf-ai-swart.vercel.app/upload-pdf/", formData, {
                 headers: { "Content-Type": "multipart/form-data" },
             });
 
             console.log("Upload response:", response.data); // Debug log
-            const { file_id, filename } = response.data;
 
-            if (file_id && filename) {
-                // Pass both `file_id` and `filename` to the parent component
-                onFileUpload({ file_id, filename });
-                alert("File uploaded successfully!");
+            // Check for the response structure
+            const { filename, message } = response.data; // assuming the message confirms success
+
+            if (filename) {
+                // Pass the filename to the parent component
+                onFileUpload({ filename });
+                alert(message);  // Alert user of successful upload
             } else {
                 throw new Error("Invalid response from the server.");
             }
         } catch (error) {
             console.error("Error uploading file:", error);
             alert("Failed to upload the file. Please try again.");
+        } finally {
+            setUploading(false);  // End loading state
         }
     };
 
@@ -56,8 +63,12 @@ const Upload = ({ onFileUpload }) => {
             </label>
 
             {/* Upload Button */}
-            <button className="upload-btn" onClick={handleUpload}>
-                + Upload PDF
+            <button 
+                className={`upload-btn ${uploading ? "loading" : ""}`} 
+                onClick={handleUpload}
+                disabled={uploading}  // Disable button when uploading
+            >
+                {uploading ? "Uploading..." : "+ Upload PDF"}
             </button>
         </div>
     );
