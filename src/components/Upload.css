@@ -1,10 +1,9 @@
 /* Container for the buttons */
+/* Container for the buttons */
 .upload-container {
   display: flex;
-  flex-direction: column; /* Stacks buttons and elements vertically */
-  align-items: center; /* Center elements */
+  align-items: center;
   gap: 10px; /* Space between buttons */
-  padding: 16px; /* Add padding to the container */
 }
 
 /* Hide the default file input */
@@ -16,15 +15,14 @@
 .file-input-label,
 .upload-btn {
   display: inline-block;
-  padding: 12px 24px; /* Better button size */
-  width: 100%; /* Make buttons full width on mobile */
-  max-width: 150px; /* Limit max width on larger screens */
+  padding: 12px 24px; /* Add padding for better button size */
+  width: 150px; /* Set a fixed width for both buttons */
   font-size: 14px;
-  border-radius: 5px; /* Rounded corners */
+  border-radius: 5px; /* Optional: rounded corners */
   text-align: center;
   cursor: pointer;
-  transition: background-color 0.3s ease;
-  box-sizing: border-box; /* Include padding and border in total width */
+  transition: all 0.3s ease;
+  box-sizing: border-box; /* Include padding and border in the total width */
 }
 
 /* Choose File button styling */
@@ -53,28 +51,46 @@
   color: white; /* White text color */
 }
 
-/* Prevent pointer events on the display text */
+
 .file-input-text {
   pointer-events: none;
 }
 
-/* Responsive adjustments */
-@media (min-width: 768px) {
-  .upload-container {
-      flex-direction: row; /* Change to row layout on larger screens */
-      justify-content: space-between; /* Space between items */
-  }
 
-  .file-input-label,
-  .upload-btn {
-      width: auto; /* Reset width for larger screens */
-  }
+button {
+  padding: 10px 20px; /* Increase padding for better size */
+  width: auto; /* Default width */
+  min-width: 120px; /* Ensures the buttons have a minimum width */
+  font-size: 14px; /* Slightly larger font if needed */
+  border: 2px solid #28a745; /* Green border for default buttons */
+  border-radius: 5px; /* Rounded edges */
+  background-color: transparent; /* Keeps the default transparent style */
+  color: #28a745; /* Green text for default buttons */
+  cursor: pointer;
+  transition: all 0.3s ease;
 }
 
-/* New style for displaying the selected file name */
-.selected-file-name {
-  font-size: 14px; /* Match the font size with the buttons */
-  color: #555; /* Different color for the filename */
-  padding: 12px 0; /* Space around filename display */
-  margin-right: 10px; /* Space between filename and upload button */
+button:hover {
+  background-color: #28a745; /* Green background on hover */
+  color: white; /* Change text color to white */
+}
+
+button.upload-button {
+  border: 2px solid #000; /* Black border for Upload PDF button */
+  color: #000;
+}
+
+button.upload-button:hover {
+  background-color: #000; /* Black background on hover */
+  color: white; /* White text on hover */
+}
+
+input[type="file"] {
+  width: 200px; /* Adjust the width as needed */
+  padding: 10px; /* Optional: Add padding for better appearance */
+  border: 2px solid green; /* Optional: Add border styling */
+  border-radius: 5px; /* Optional: Add border radius for rounded corners */
+  background-color: white; /* Optional: Background color */
+  color: green; /* Text color */
+  cursor: pointer; /* Change cursor to pointer */
 }
