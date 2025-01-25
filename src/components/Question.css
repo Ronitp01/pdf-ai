@@ -78,8 +78,8 @@ input[type="text"]:focus {
 
 /* Send Button Styling */
 .send-button {
-    background-color: #4caf50;
-    color: #fff;
+    background-color: #becabf;
+    color: #010000;
     border: none;
     border-radius: 50%;
     width: 40px;
