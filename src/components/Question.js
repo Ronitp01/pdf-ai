@@ -18,7 +18,6 @@ const Question = ({ fileId }) => {
         setIsLoading(true);
 
         try {
-            // Use URLSearchParams for form data
             const params = new URLSearchParams();
             params.append("file_id", fileId); // Pass the fileId
             params.append("question", question.trim()); // Pass the trimmed question
@@ -57,13 +56,11 @@ const Question = ({ fileId }) => {
                         key={index}
                         className={`message-wrapper ${message.type === 'question' ? 'user-message' : 'ai-message'}`}
                     >
-                        {/* Avatar */}
                         <img
                             src={message.avatar}
                             alt={`${message.type} avatar`}
                             className="avatar"
                         />
-                        {/* Message */}
                         <div className="message-bubble">
                             {message.text}
                         </div>
@@ -79,6 +76,7 @@ const Question = ({ fileId }) => {
                     value={question}
                     onChange={(e) => setQuestion(e.target.value)}
                     disabled={isLoading}
+                    className="text-input" // Add this class for styling if needed
                 />
                 <button
                     onClick={handleAskQuestion}

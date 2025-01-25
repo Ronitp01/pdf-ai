@@ -25,8 +25,6 @@ const Upload = ({ onFileUpload }) => {
             });
 
             console.log("Upload response:", response.data); // Debug log
-
-            // Extract `file_id` and `filename` from the response
             const { file_id, filename } = response.data;
 
             if (file_id && filename) {
