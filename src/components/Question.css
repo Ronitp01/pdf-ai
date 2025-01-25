@@ -95,3 +95,41 @@ input[type="text"]:focus {
         flex-shrink: 0; /* Ensure button doesn't shrink */
     }
 }
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .input-container {
+        display: flex; /* Use flexbox for alignment */
+        flex-direction: row; /* Keep elements in a row */
+        align-items: center; /* Center align items */
+        width: 100%; /* Full width for the input container */
+        padding: 5px; /* Add some padding */
+        border: 1px solid #ddd; /* Border around the input container */
+        border-radius: 20px; /* Rounded corners */
+        background-color: #fff; /* Background color */
+    }
+
+    input[type="text"] {
+        flex: 1; /* Allow input to take available space */
+        font-size: 14px; /* Adjust font size */
+        padding: 10px; /* Padding for input */
+        border: none; /* Remove default border */
+        border-radius: 20px; /* Match the container's border radius */
+        outline: none; /* Remove outline on focus */
+    }
+
+    .send-button {
+        width: 36px; /* Smaller button size */
+        height: 36px; /* Smaller button size */
+        margin-left: 5px; /* Space between input and button */
+        background-color: #4caf50; /* Button background color */
+        color: white; /* Button text color */
+        border: none; /* Remove border */
+        border-radius: 20px; /* Match the input container's border radius */
+        cursor: pointer; /* Pointer cursor on hover */
+    }
+
+    .send-button:hover {
+        background-color: #45a049; /* Darker shade on hover */
+    }
+}

@@ -156,29 +156,25 @@ html, body, #root {
 @media (max-width: 768px) {
     .container {
         padding: 5px; /* Reduce padding for smaller screens */
+        display: flex; /* Use flexbox for alignment */
+        flex-direction: column; /* Stack elements vertically */
     }
 
     .input-container {
-        display: flex; /* Use flexbox for alignment */
+        display: flex; /* Use flexbox for input and button */
         align-items: center; /* Center align items */
-        width: 100%; /* Full width for the input container */
-    }
-
-    .message-input {
-        font-size: 12px; /* Smaller font size for input */
-        padding: 6px; /* Adjust padding for input */
-        flex: 1; /* Allow input to take available space */
-        border-radius: 20px; /* Match the original style */
-        border: 1px solid #ddd; /* Match the original style */
     }
 
     .send-button {
         width: 36px; /* Smaller button size */
         height: 36px; /* Smaller button size */
         margin-left: 5px; /* Space between input and button */
-        display: flex; /* Ensure button is a flex container */
-        justify-content: center; /* Center icon */
-        align-items: center; /* Center icon */
+    }
+
+    .message-input {
+        font-size: 12px; /* Smaller font size for input */
+        padding: 6px; /* Adjust padding for input */
+        flex: 1; /* Allow input to take available space */
     }
 
     .message-list {
