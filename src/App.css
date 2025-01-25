@@ -105,22 +105,21 @@ body {
   border-color: #4caf50;
 }
 
-/* Send Button Styling */
 .send-button {
+  background-color: #f5f7f8; /* Green color */
+  border: none; /* No border */
+  border-radius: 50%; /* Circular button */
+  width: 48px; /* Set size */
+  height: 48px; /* Set size */
   display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 10px 20px;
-  background-color: #4caf50;
-  color: white;
-  border: none;
-  border-radius: 25px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
+  justify-content: center; /* Center icon */
+  align-items: center; /* Center icon */
+  cursor: pointer; /* Show pointer cursor */
+  transition: background-color 0.3s ease; /* Smooth transition for background color */
 }
 
 .send-button:hover {
-  background-color: #43a047;
+  background-color: #bdd3ea; /* Darker green on hover */
 }
 
 .send-button:active {
