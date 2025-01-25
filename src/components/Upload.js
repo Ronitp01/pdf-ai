@@ -57,9 +57,6 @@ const Upload = ({ onFileUpload }) => {
                 />
             </label>
 
-            {/* Display the selected file name without overwriting action */}
-            <span className="selected-file-name">{file ? file.name : ""}</span>
-
             {/* Upload Button */}
             <button className="upload-btn" onClick={handleUpload}>
                 + Upload PDF

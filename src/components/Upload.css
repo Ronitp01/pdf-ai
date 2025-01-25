@@ -1,5 +1,4 @@
 /* Container for the buttons */
-/* Container for the buttons */
 .upload-container {
   display: flex;
   align-items: center;
@@ -51,12 +50,20 @@
   color: white; /* White text color */
 }
 
-
+/* Prevent pointer events on the display text */
 .file-input-text {
   pointer-events: none;
 }
 
+/* New style for displaying the selected file name */
+.selected-file-name {
+  font-size: 14px; /* Match the font size with the buttons */
+  color: #555; /* Optional: a different color for the filename */
+  padding: 12px 0; /* Space around the filename display */
+  margin-right: 10px; /* Space between filename and upload button */
+}
 
+/* Advanced Button Styles */
 button {
   padding: 10px 20px; /* Increase padding for better size */
   width: auto; /* Default width */

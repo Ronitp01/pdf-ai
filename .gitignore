@@ -22,6 +22,7 @@ Thumbs.db
 
 # environment variables
 .env
+config.py 
 .env.local
 .env.development.local
 .env.test.local
