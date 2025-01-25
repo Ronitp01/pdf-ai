@@ -24,7 +24,7 @@ app = FastAPI()
 # Allow CORS for frontend communication
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:3000"],  # Adjust for production
+    allow_origins=["https://pdf-ai-swart.vercel.app"],  # Replace with your Vercel app URL
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
