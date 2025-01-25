@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import { VscSend } from "react-icons/vsc"; // Import the send icon
 import './Question.css'; // Import CSS for styling
 
 const Question = ({ fileId }) => {
@@ -35,7 +36,7 @@ const Question = ({ fileId }) => {
             setChatHistory((prevChat) => [
                 ...prevChat,
                 { type: 'question', text: question, avatar: '/user.png' }, // Update User Avatar
-                { type: 'answer', text: answer, avatar: '/ai.png' }        // Update AI Avatar
+                { type: 'answer', text: answer, avatar: '/ai.png' } // Update AI Avatar
             ]);
 
             setQuestion(''); // Clear the input
@@ -84,10 +85,11 @@ const Question = ({ fileId }) => {
                     disabled={isLoading}
                     className="send-button"
                 >
-                    &#9658;
+                    <VscSend className="send-icon" /> {/* Use VscSend icon */}
                 </button>
             </div>
         </div>
     );
 };
+
 export default Question;
