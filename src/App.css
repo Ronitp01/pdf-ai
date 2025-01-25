@@ -8,14 +8,13 @@ body {
   background-color: #f9f9f9;
 }
 
-/* App Container */
 .app {
   display: flex;
   flex-direction: column;
   height: 100vh; /* Full viewport height */
 }
 
-/* Header */
+/* Header Styles */
 .header {
   display: flex;
   justify-content: space-between;
@@ -23,6 +22,10 @@ body {
   padding: 10px 20px;
   background-color: #ffffff;
   border-bottom: 1px solid #e5e5e5;
+  position: sticky; /* Sticks to the top during scroll */
+  top: 0;
+  z-index: 1000; /* Ensure it stays on top */
+  box-sizing: border-box;
 }
 
 .logo {
@@ -32,26 +35,36 @@ body {
 }
 
 .logo-icon {
-  width: 40px; /* Smaller logo for mobile */
+  width: 100px;
   height: auto;
 }
 
-/* Document Name */
-.document-name {
-  color: #4CAF50; /* Color for uploaded document name */
-  font-size: 14px; /* Font size for readability */
+.upload-controls {
+  display: flex;
+  align-items: center;
+  gap: 15px;
 }
 
-/* Chat Container */
+.file-name {
+  font-size: 14px;
+  color: #4caf50;
+}
+
+/* Main Chat Container */
 .chat-container {
-  flex: 1; /* Takes up remaining height */
-  overflow-y: auto; /* Allows scrolling of message area */
-  padding: 10px; /* Padding for better spacing */
+  flex: 1; /* Fills available space */
+  overflow-y: auto; /* Allow scrolling */
+  padding: 20px;
+  background-color: #f9f9f9;
 }
 
-/* Chat Area for Messages */
+/* Chat Area for Messages from App.js */
 .chat-area {
-  margin-top: 10px;
+  margin-top: 20px;
+  padding: 10px;
+  background-color: #ffffff;
+  border-radius: 5px;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
 }
 
 /* Individual Message Styling */
@@ -61,78 +74,128 @@ body {
   border-radius: 10px;
   margin: 5px 0;
   color: #333;
-  font-size: 14px; /* Font size for messages */
-  max-width: 75%; /* Limit message width */
-}
-
-/* Message from User */
-.user-message {
-  background-color: #cce5ff; /* Different color for user messages */
-  margin-left: auto; /* Align to the right */
+  font-size: 14px;
 }
 
 /* Footer/Input Section */
 .footer {
   display: flex;
   align-items: center;
-  padding: 10px;
+  padding: 10px 20px;
   background-color: #ffffff;
   border-top: 1px solid #e5e5e5;
+  position: sticky; /* Sticks to the bottom */
+  bottom: 0;
+  z-index: 1000; /* Ensure it stays on top */
+  box-sizing: border-box;
 }
 
+/* Input Box Styling */
 .input-box {
-  flex: 1; /* Take available space */
+  flex: 1; /* Takes up available space */
+  padding: 10px;
+  margin-right: 10px;
   border: 1px solid #cccccc;
   border-radius: 25px;
-  padding: 10px;
   outline: none;
   font-size: 14px;
 }
 
 .input-box:focus {
-  border-color: #4caf50; /* Green border on focus */
+  border-color: #4caf50;
 }
 
-/* Send Button */
+/* Update Send Button Styling */
 .send-button {
-  background-color: #4caf50; /* Background color */
-  color: white; /* Text color */
+  background-color: transparent; /* Match the background */
+  color: #333; /* Text color */
   border: none; /* No border */
-  border-radius: 50%; /* Circular button */
   width: 48px; /* Set size */
   height: 48px; /* Set size */
-  margin-left: 10px; /* Space from input */
-  cursor: pointer; /* Pointer cursor */
+  display: flex;
+  justify-content: center; /* Center icon */
+  align-items: center; /* Center icon */
+  cursor: pointer; /* Show pointer cursor */
+  transition: background-color 0.3s ease; /* Smooth transition for background color */
 }
 
-/* Responsive Design */
+.send-button:hover {
+  background-color: rgba(189, 211, 234, 0.5); /* Light background on hover */
+}
+
+.send-button:active {
+  transform: scale(0.95); /* Adds a press effect */
+}
+
+.send-icon {
+  color: rgb(0, 0, 0); /* Icon color */
+  font-size: 24px; /* Icon size */
+}
+
+
+/* Ensure no overlapping elements block the footer */
+body, html, #root {
+  height: 100%;
+  position: relative;
+}
+.upload-prompt {
+  text-align: center;
+  margin-top: 50px;
+  font-size: 18px;
+  color: #555;
+  font-weight: 500;
+}
+/* Ensure the root elements take up full height */
+html, body, #root {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+/* Responsive Design Adjustments */
 @media (max-width: 768px) {
-  .header {
-      flex-direction: column; /* Stack in mobile */
-      align-items: flex-start; /* Align left */
-      padding: 10px; /* Smaller padding */
-  }
-  
-  .chat-area {
-      margin: 5px 0; /* Smaller margins */
-  }
-  
-  .message {
-      font-size: 14px; /* Font size for better readability */
-  }
+    .container {
+        padding: 5px; /* Reduce padding for smaller screens */
+    }
 
-  .input-box {
-      font-size: 12px; /* Smaller input font size */
-      padding: 8px; /* Smaller padding in input */
-  }
+    .input-container {
+        display: flex; /* Use flexbox for alignment */
+        align-items: center; /* Center align items */
+        width: 100%; /* Full width for the input container */
+    }
 
-  .footer {
-      padding: 5px; /* Smaller padding */
-      align-items: center; /* Center align items */
-  }
+    .message-input {
+        font-size: 12px; /* Smaller font size for input */
+        padding: 6px; /* Adjust padding for input */
+        flex: 1; /* Allow input to take available space */
+        border-radius: 20px; /* Match the original style */
+        border: 1px solid #ddd; /* Match the original style */
+    }
 
-  .send-button {
-      width: 40px; /* Smaller button size */
-      height: 40px; /* Smaller button size */
-  }
+    .send-button {
+        width: 36px; /* Smaller button size */
+        height: 36px; /* Smaller button size */
+        margin-left: 5px; /* Space between input and button */
+        display: flex; /* Ensure button is a flex container */
+        justify-content: center; /* Center icon */
+        align-items: center; /* Center icon */
+    }
+
+    .message-list {
+        max-height: 250px; /* Limit height for message list */
+        overflow-y: auto; /* Enable scrolling */
+    }
+
+    .header {
+        font-size: 16px; /* Smaller header font size */
+    }
+
+    .file-list {
+        font-size: 12px; /* Smaller font size for file names */
+    }
+
+    .file-item {
+        padding: 5px; /* Reduce padding for file items */
+    }
 }
+  
