@@ -25,13 +25,13 @@ The application consists of two main components:
 
 1. **Frontend**: Built with React, providing an intuitive user interface.
    
-   ![Frontend Architecture](link-to-frontend-architecture-image.png)
+   ![Frontend Architecture]
 
 2. **Backend**: Built with FastAPI, handling:
    - PDF uploads and processing.
    - Question parsing and answering via machine learning model.
 
-   ![Backend Architecture](link-to-backend-architecture-image.png)
+   ![Backend Architecture]
 
 ## Setup Instructions
 
@@ -117,14 +117,3 @@ Before you begin, ensure you have the following installed:
     - `200 OK`: Returns the answer to the specified question.
     - `404 NOT FOUND`: If the file ID is not valid.
 
-## Contributing
-
-Contributions are welcome! Please read the [CONTRIBUTING.md](CONTRIBUTING.md) file for guidelines.
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-## Acknowledgements
-
-Thank you to the contributors of the libraries and frameworks used in this project.
