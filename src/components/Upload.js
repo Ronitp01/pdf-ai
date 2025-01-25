@@ -3,10 +3,10 @@ import axios from "axios";
 import './Upload.css'; // Import CSS for styling
 
 const Upload = ({ onFileUpload }) => {
-    const [file, setFile] = useState(null);
+    const [file, setFile] = useState(null); // To store the selected file
 
     const handleFileChange = (event) => {
-        setFile(event.target.files[0]);
+        setFile(event.target.files[0]); // Store the selected file
     };
 
     const handleUpload = async () => {
@@ -33,6 +33,9 @@ const Upload = ({ onFileUpload }) => {
                 // Pass both `file_id` and `filename` to the parent component
                 onFileUpload({ file_id, filename });
                 alert("File uploaded successfully!");
+                
+                // Optionally reset the selected file after successful upload
+                setFile(null); // Uncomment if you want to clear the selected file after uploading
             } else {
                 throw new Error("Invalid response from the server.");
             }
@@ -44,15 +47,19 @@ const Upload = ({ onFileUpload }) => {
 
     return (
         <div className="upload-container">
+            {/* Display the uploaded file name to the left of the buttons */}
+            {file && <span className="uploaded-file-name">{file.name}</span>}
+            
             {/* File Input */}
             <label htmlFor="file-input" className="file-input-label">
-                <span className="file-input-text">{file ? file.name : "Choose File"}</span>
+                Choose File
                 <input
                     id="file-input"
                     type="file"
                     accept=".pdf"
                     onChange={handleFileChange}
                     className="file-input"
+                    hidden // Hide the input to preserve the label's appearance
                 />
             </label>
 
