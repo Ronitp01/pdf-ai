@@ -107,8 +107,8 @@ body {
 
 .send-button {
   background-color: #f5f7f8; /* Green color */
+  color: #333;
   border: none; /* No border */
-  border-radius: 50%; /* Circular button */
   width: 48px; /* Set size */
   height: 48px; /* Set size */
   display: flex;
