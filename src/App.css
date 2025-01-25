@@ -1,0 +1,153 @@
+/* App.css */
+
+/* Global Styles */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f9f9f9;
+}
+
+.app {
+  display: flex;
+  flex-direction: column;
+  height: 100vh; /* Full viewport height */
+}
+
+/* Header Styles */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #ffffff;
+  border-bottom: 1px solid #e5e5e5;
+  position: sticky; /* Sticks to the top during scroll */
+  top: 0;
+  z-index: 1000; /* Ensure it stays on top */
+  box-sizing: border-box;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo-icon {
+  width: 100px;
+  height: auto;
+}
+
+.upload-controls {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.file-name {
+  font-size: 14px;
+  color: #4caf50;
+}
+
+/* Main Chat Container */
+.chat-container {
+  flex: 1; /* Fills available space */
+  overflow-y: auto; /* Allow scrolling */
+  padding: 20px;
+  background-color: #f9f9f9;
+}
+
+/* Chat Area for Messages from App.js */
+.chat-area {
+  margin-top: 20px;
+  padding: 10px;
+  background-color: #ffffff;
+  border-radius: 5px;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Individual Message Styling */
+.message {
+  background-color: #e0f7fa;
+  padding: 10px;
+  border-radius: 10px;
+  margin: 5px 0;
+  color: #333;
+  font-size: 14px;
+}
+
+/* Footer/Input Section */
+.footer {
+  display: flex;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #ffffff;
+  border-top: 1px solid #e5e5e5;
+  position: sticky; /* Sticks to the bottom */
+  bottom: 0;
+  z-index: 1000; /* Ensure it stays on top */
+  box-sizing: border-box;
+}
+
+/* Input Box Styling */
+.input-box {
+  flex: 1; /* Takes up available space */
+  padding: 10px;
+  margin-right: 10px;
+  border: 1px solid #cccccc;
+  border-radius: 25px;
+  outline: none;
+  font-size: 14px;
+}
+
+.input-box:focus {
+  border-color: #4caf50;
+}
+
+/* Send Button Styling */
+.send-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 20px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.send-button:hover {
+  background-color: #43a047;
+}
+
+.send-button:active {
+  transform: scale(0.95); /* Adds a press effect */
+}
+
+.send-button svg {
+  width: 20px;
+  height: 20px;
+}
+
+/* Ensure no overlapping elements block the footer */
+body, html, #root {
+  height: 100%;
+  position: relative;
+}
+.upload-prompt {
+  text-align: center;
+  margin-top: 50px;
+  font-size: 18px;
+  color: #555;
+  font-weight: 500;
+}
+/* Ensure the root elements take up full height */
+html, body, #root {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+  
