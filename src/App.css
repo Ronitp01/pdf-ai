@@ -105,9 +105,10 @@ body {
   border-color: #4caf50;
 }
 
+/* Update Send Button Styling */
 .send-button {
-  background-color: #f5f7f8; /* Green color */
-  color: #333;
+  background-color: transparent; /* Match the background */
+  color: #333; /* Text color */
   border: none; /* No border */
   width: 48px; /* Set size */
   height: 48px; /* Set size */
@@ -119,7 +120,7 @@ body {
 }
 
 .send-button:hover {
-  background-color: #bdd3ea; /* Darker green on hover */
+  background-color: rgba(189, 211, 234, 0.5); /* Light background on hover */
 }
 
 .send-button:active {
