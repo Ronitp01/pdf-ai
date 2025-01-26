@@ -1,3 +1,4 @@
+
 /* Container for the buttons */
 /* Container for the buttons */
 .upload-container {
@@ -51,11 +52,9 @@
   color: white; /* White text color */
 }
 
-
 .file-input-text {
   pointer-events: none;
 }
-
 
 button {
   padding: 10px 20px; /* Increase padding for better size */
