@@ -20,7 +20,9 @@ const Upload = ({ onFileUpload }) => {
 
         try {
             // Call the upload endpoint
-            const response = await axios.post("http://127.0.0.1:8000/upload-pdf/","https://pdf-ai-swart.vercel.app/upload-pdf/", formData, {
+            const response = await axios.post(
+                "/upload-pdf/",
+                 formData, {
                 headers: { "Content-Type": "multipart/form-data" },
             });
 
