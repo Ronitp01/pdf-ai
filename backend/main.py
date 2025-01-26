@@ -26,14 +26,15 @@ app = FastAPI()
 app.add_middleware(
     CORSMiddleware,
     allow_origins=[
-    "https://pdf-ai-swart.vercel.app"],
+    "https://pdf-ai-swart.vercel.app",
+    http://localhost:3000],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
 )
 
 # Directory for uploaded PDF files
-UPLOAD_DIR = "/tmp/uploaded_pdfs/"
+UPLOAD_DIR = "./uploaded_pdfs/"
 os.makedirs(UPLOAD_DIR, exist_ok=True)
 
 # Backend storage for vectorstores mapped by file_id
@@ -42,7 +43,7 @@ pdf_vectorstores = {}
 # Ensure OpenAI API key is loaded
 os.environ["OPENAI_API_KEY"] = os.getenv("OPENAI_API_KEY")
 if not os.environ["OPENAI_API_KEY"]:
-    raise ValueError("OpenAI API Key not found. Ensure it's set in the environment variables.")
+    raise ValueError("OpenAI API Key not found. Ensure it’s set in the environment variables.")
 
 # Helper function to process and create a vectorstore from PDF
 def process_pdf(file_path):
