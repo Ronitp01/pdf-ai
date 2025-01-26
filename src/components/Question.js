@@ -23,7 +23,7 @@ const Question = ({ fileId }) => {
             params.append("question", question.trim()); // Pass the trimmed question
 
             const response = await axios.post(
-            "/ask-question/",
+                "http://127.0.0.1:8000/ask-question/",
                 params,
                 {
                     headers: { "Content-Type": "application/x-www-form-urlencoded" },
