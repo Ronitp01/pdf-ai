@@ -43,3 +43,4 @@ debug.log
 
 # temporary files
 .temp/
+.vercel
